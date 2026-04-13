@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9B09EC25-F565-4B6B-BB1E-7A84F17BCAF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnotShoreRealty.Core", "src\KnotShoreRealty.Core\KnotShoreRealty.Core.csproj", "{0AE5E8B9-0D9C-4D56-8E47-C7EA87DDBF8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnotShoreRealty.Data", "src\KnotShoreRealty.Data\KnotShoreRealty.Data.csproj", "{71CDE3F4-E700-477E-87FF-64445A5465DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnotShoreRealty.Web", "src\KnotShoreRealty.Web\KnotShoreRealty.Web.csproj", "{3331F84A-9FDD-4B08-B21F-E587A75CB73F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B08894E9-1E1A-4051-A187-A423B08F4D3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnotShoreRealty.Web.Tests", "tests\KnotShoreRealty.Web.Tests\KnotShoreRealty.Web.Tests.csproj", "{7924A68A-9560-4C13-BC56-FE677873DBDE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0AE5E8B9-0D9C-4D56-8E47-C7EA87DDBF8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AE5E8B9-0D9C-4D56-8E47-C7EA87DDBF8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AE5E8B9-0D9C-4D56-8E47-C7EA87DDBF8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AE5E8B9-0D9C-4D56-8E47-C7EA87DDBF8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71CDE3F4-E700-477E-87FF-64445A5465DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71CDE3F4-E700-477E-87FF-64445A5465DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71CDE3F4-E700-477E-87FF-64445A5465DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71CDE3F4-E700-477E-87FF-64445A5465DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3331F84A-9FDD-4B08-B21F-E587A75CB73F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3331F84A-9FDD-4B08-B21F-E587A75CB73F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3331F84A-9FDD-4B08-B21F-E587A75CB73F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3331F84A-9FDD-4B08-B21F-E587A75CB73F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7924A68A-9560-4C13-BC56-FE677873DBDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7924A68A-9560-4C13-BC56-FE677873DBDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7924A68A-9560-4C13-BC56-FE677873DBDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7924A68A-9560-4C13-BC56-FE677873DBDE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0AE5E8B9-0D9C-4D56-8E47-C7EA87DDBF8F} = {9B09EC25-F565-4B6B-BB1E-7A84F17BCAF3}
+		{71CDE3F4-E700-477E-87FF-64445A5465DC} = {9B09EC25-F565-4B6B-BB1E-7A84F17BCAF3}
+		{3331F84A-9FDD-4B08-B21F-E587A75CB73F} = {9B09EC25-F565-4B6B-BB1E-7A84F17BCAF3}
+		{7924A68A-9560-4C13-BC56-FE677873DBDE} = {B08894E9-1E1A-4051-A187-A423B08F4D3F}
+	EndGlobalSection
+EndGlobal

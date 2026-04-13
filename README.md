@@ -6,14 +6,14 @@ A small real estate website for a fictional St. Louis brokerage, built with ASP.
 
 #### Status ####
 
-This project will be built in six milestones. Each milestone is a separate feature branch merged to main via pull request.
+This project will be built in six phases. Each phase is a separate feature branch merged to main via pull request.
 
-- [ ] Milestone 1 — Scaffold solution, EF Core, logging, health checks
-- [ ] Milestone 2 — Domain models, repositories, seed data
-- [ ] Milestone 3 — Public pages, view components, SEO baseline
-- [ ] Milestone 4 — REST API with integration tests
-- [ ] Milestone 5 — Client-side filter and inquiry submission
-- [ ] Milestone 6 — ADRs, backlog, final documentation
+- [x] Phase 1 — Scaffold solution, EF Core, logging, health checks
+- [ ] Phase 2 — Domain models, repositories, seed data
+- [ ] Phase 3 — Public pages, view components, SEO baseline
+- [ ] Phase 4 — REST API with integration tests
+- [ ] Phase 5 — Client-side filter and inquiry submission
+- [ ] Phase 6 — ADRs, backlog, final documentation
 
 ## What this is
 
@@ -209,11 +209,11 @@ The workflow uses an Ubuntu runner. The status badge at the top of this README r
 
 Work on this project follows a simple but deliberate branching model intended to mirror how a small team would actually ship code:
 
-- `main` is always in a deployable state and reflects the most recent merged milestone
-- Each milestone lives on its own feature branch (e.g., `feature/milestone-2-data-layer`)
-- Milestones are merged to main via pull request, even though this is a solo project — the PR history itself is part of the portfolio
+- `main` is always in a deployable state and reflects the most recent merged phase
+- Each phase lives on its own feature branch (e.g., `feature/phase-2-data-layer`)
+- Phases are merged to main via pull request, even though this is a solo project — the PR history itself is part of the portfolio
 - Commit messages follow Conventional Commits (`feat:`, `fix:`, `test:`, `chore:`, `docs:`, `refactor:`)
-- Small fixes and iterations are committed honestly rather than squashed into a single "perfect" commit per milestone
+- Small fixes and iterations are committed honestly rather than squashed into a single "perfect" commit per phase
 
 ## Architecture decision records
 
