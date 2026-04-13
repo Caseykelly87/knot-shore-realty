@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9B09EC25-F56
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnotShoreRealty.Core", "src\KnotShoreRealty.Core\KnotShoreRealty.Core.csproj", "{0AE5E8B9-0D9C-4D56-8E47-C7EA87DDBF8F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnotShoreRealty.Data", "src\KnotShoreRealty.Data\KnotShoreRealty.Data.csproj", "{71CDE3F4-E700-477E-87FF-64445A5465DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,8 +22,13 @@ Global
 		{0AE5E8B9-0D9C-4D56-8E47-C7EA87DDBF8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AE5E8B9-0D9C-4D56-8E47-C7EA87DDBF8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AE5E8B9-0D9C-4D56-8E47-C7EA87DDBF8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71CDE3F4-E700-477E-87FF-64445A5465DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71CDE3F4-E700-477E-87FF-64445A5465DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71CDE3F4-E700-477E-87FF-64445A5465DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71CDE3F4-E700-477E-87FF-64445A5465DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0AE5E8B9-0D9C-4D56-8E47-C7EA87DDBF8F} = {9B09EC25-F565-4B6B-BB1E-7A84F17BCAF3}
+		{71CDE3F4-E700-477E-87FF-64445A5465DC} = {9B09EC25-F565-4B6B-BB1E-7A84F17BCAF3}
 	EndGlobalSection
 EndGlobal
