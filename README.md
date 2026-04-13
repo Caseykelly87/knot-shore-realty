@@ -8,7 +8,7 @@ A small real estate website for a fictional St. Louis brokerage, built with ASP.
 
 This project will be built in six phases. Each phase is a separate feature branch merged to main via pull request.
 
-- [ ] Phase 1 — Scaffold solution, EF Core, logging, health checks
+- [x] Phase 1 — Scaffold solution, EF Core, logging, health checks
 - [ ] Phase 2 — Domain models, repositories, seed data
 - [ ] Phase 3 — Public pages, view components, SEO baseline
 - [ ] Phase 4 — REST API with integration tests
