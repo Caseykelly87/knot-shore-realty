@@ -46,11 +46,25 @@ public class DbInitializer
 
         var slugToNeighborhoodId = await SeedNeighborhoodsAsync(neighborhoodDtos);
         var dtoIdToAgentId       = await SeedAgentsAsync(agentDtos);
-        await SeedListingsAsync(listingDtos, slugToNeighborhoodId, dtoIdToAgentId);
+
+        var missingNeighborhood = new List<string>();
+        var missingAgent        = new List<string>();
+        await SeedListingsAsync(listingDtos, slugToNeighborhoodId, dtoIdToAgentId,
+            missingNeighborhood, missingAgent);
 
         _logger.LogInformation(
             "Seed complete: {Neighborhoods} neighborhoods, {Agents} agents, {Listings} listings",
             neighborhoodDtos.Count, agentDtos.Count, listingDtos.Count);
+
+        if (missingNeighborhood.Count > 0 || missingAgent.Count > 0)
+        {
+            _logger.LogWarning(
+                "Seed completed with skipped records: {MissingNeighborhoodCount} listings missing neighborhoods ({MissingNeighborhoodIds}), {MissingAgentCount} listings missing agents ({MissingAgentIds})",
+                missingNeighborhood.Count,
+                string.Join(", ", missingNeighborhood),
+                missingAgent.Count,
+                string.Join(", ", missingAgent));
+        }
     }
 
     private async Task<Dictionary<string, int>> SeedNeighborhoodsAsync(
@@ -125,19 +139,23 @@ public class DbInitializer
     private async Task SeedListingsAsync(
         List<SeedDataLoader.ListingSeedDto> dtos,
         Dictionary<string, int> slugToNeighborhoodId,
-        Dictionary<string, int> dtoIdToAgentId)
+        Dictionary<string, int> dtoIdToAgentId,
+        List<string> missingNeighborhood,
+        List<string> missingAgent)
     {
         foreach (var dto in dtos)
         {
             if (!slugToNeighborhoodId.TryGetValue(dto.Neighborhood, out var neighborhoodId))
             {
                 _logger.LogWarning("Neighborhood slug not found: {Slug} (listing {Id})", dto.Neighborhood, dto.Id);
+                missingNeighborhood.Add(dto.Id);
                 continue;
             }
 
             if (!dtoIdToAgentId.TryGetValue(dto.AgentId, out var agentId))
             {
                 _logger.LogWarning("Agent id not found: {AgentId} (listing {Id})", dto.AgentId, dto.Id);
+                missingAgent.Add(dto.Id);
                 continue;
             }
 
