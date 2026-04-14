@@ -1,0 +1,47 @@
+[
+  {
+    "id": "agent_001",
+    "name": "Sarah Jenkins",
+    "title": "Principal Broker",
+    "email": "sarah@knotshorerealty.com",
+    "phone": "314-555-0101",
+    "bio": "A St. Louis native with 15 years of experience, Sarah specializes in luxury estates and corporate relocations in the Clayton and Ladue corridors.",
+    "image": "/images/agents/sarah-jenkins.jpg"
+  },
+  {
+    "id": "agent_002",
+    "name": "Marcus Thorne",
+    "title": "Senior Associate",
+    "email": "marcus@knotshorerealty.com",
+    "phone": "314-555-0102",
+    "bio": "Marcus is the king of historic brick! He focuses on the preservation of South City architecture, specifically in Soulard and Benton Park.",
+    "image": "/images/agents/marcus-thorne.jpg"
+  },
+  {
+    "id": "agent_003",
+    "name": "Elena Rodriguez",
+    "title": "Buyer's Specialist",
+    "email": "elena@knotshorerealty.com",
+    "phone": "314-555-0103",
+    "bio": "Elena loves helping first-time buyers navigate the competitive West County market. She is known for her patience and expert negotiation skills.",
+    "image": "/images/agents/elena-rodriguez.jpg"
+  },
+  {
+    "id": "agent_004",
+    "name": "David 'Dutch' Van Horn",
+    "title": "Commercial & Residential Specialist",
+    "email": "dutch@knotshorerealty.com",
+    "phone": "314-555-0104",
+    "bio": "With a background in analytics, Dutch provides data-driven insights for investors looking at multi-family units in University City and Dogtown.",
+    "image": "/images/agents/dutch-van-horn.jpg"
+  },
+  {
+    "id": "agent_005",
+    "name": "Chloe Whitmore",
+    "title": "Listing Agent",
+    "email": "chloe@knotshorerealty.com",
+    "phone": "314-555-0105",
+    "bio": "Chloe specializes in staging and marketing high-acreage properties in Wildwood and Eureka, ensuring sellers get top dollar for their land.",
+    "image": "/images/agents/chloe-whitmore.jpg"
+  }
+]

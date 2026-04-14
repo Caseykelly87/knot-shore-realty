@@ -4,6 +4,7 @@ using KnotShoreRealty.Data;
 using KnotShoreRealty.Data.Seed;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 
 namespace KnotShoreRealty.Web.Tests.Seed;
@@ -160,11 +161,95 @@ public class DbInitializerTests : IDisposable
         listing101.Images.Where(i => !i.IsPrimary).Should().HaveCount(2);
     }
 
+    [Fact]
+    public async Task InitializeAsync_LogsSkipSummary_WhenListingsHaveBrokenReferences()
+    {
+        // One listing with a valid neighborhood+agent, one with an unknown neighborhood slug,
+        // one with an unknown agent id. The summary warning must mention both skipped IDs.
+        var neighborhoods = """
+            [
+              { "slug": "soulard", "name": "Soulard", "description": "Historic district", "parentSlug": null }
+            ]
+            """;
+
+        var agents = """
+            [
+              { "id": "agent_001", "name": "Sarah Jenkins", "title": "Broker", "email": "sarah@k.com", "phone": "314-555-0101", "bio": "Bio.", "image": "/img/sarah.jpg" }
+            ]
+            """;
+
+        var listings = """
+            [
+              {
+                "id": "list_good",
+                "address": "1 Main St",
+                "neighborhood": "soulard",
+                "price": 100000, "bedrooms": 2, "bathrooms": 1.0, "sqft": 1000,
+                "type": "Single Family", "main_image": "/img/a.jpg", "images": [],
+                "description": "Good listing.", "agent_id": "agent_001"
+              },
+              {
+                "id": "list_bad_hood",
+                "address": "2 Main St",
+                "neighborhood": "no-such-neighborhood",
+                "price": 100000, "bedrooms": 2, "bathrooms": 1.0, "sqft": 1000,
+                "type": "Single Family", "main_image": "/img/b.jpg", "images": [],
+                "description": "Bad neighborhood.", "agent_id": "agent_001"
+              },
+              {
+                "id": "list_bad_agent",
+                "address": "3 Main St",
+                "neighborhood": "soulard",
+                "price": 100000, "bedrooms": 2, "bathrooms": 1.0, "sqft": 1000,
+                "type": "Single Family", "main_image": "/img/c.jpg", "images": [],
+                "description": "Bad agent.", "agent_id": "agent_999"
+              }
+            ]
+            """;
+
+        await File.WriteAllTextAsync(Path.Combine(_tempDir, "neighborhoods.json"), neighborhoods);
+        await File.WriteAllTextAsync(Path.Combine(_tempDir, "agents.json"), agents);
+        await File.WriteAllTextAsync(Path.Combine(_tempDir, "listings.json"), listings);
+
+        var capturingLogger = new CapturingLogger<DbInitializer>();
+        var initializer = new DbInitializer(
+            _context,
+            new SeedDataLoader(_tempDir, NullLogger<SeedDataLoader>.Instance),
+            capturingLogger);
+
+        await initializer.InitializeAsync();
+
+        _context.Listings.Count().Should().Be(1, "only the good listing should be inserted");
+
+        capturingLogger.Warnings.Should().ContainSingle(m =>
+            m.Contains("list_bad_hood") && m.Contains("list_bad_agent"),
+            "a single summary warning should name all skipped listing IDs");
+    }
+
     public void Dispose()
     {
         _context.Dispose();
         _connection.Dispose();
         if (Directory.Exists(_tempDir))
             Directory.Delete(_tempDir, recursive: true);
+    }
+
+    private sealed class CapturingLogger<T> : ILogger<T>
+    {
+        public List<string> Warnings { get; } = new();
+
+        public IDisposable? BeginScope<TState>(TState state) where TState : notnull => null;
+        public bool IsEnabled(LogLevel logLevel) => true;
+
+        public void Log<TState>(
+            LogLevel logLevel,
+            EventId eventId,
+            TState state,
+            Exception? exception,
+            Func<TState, Exception?, string> formatter)
+        {
+            if (logLevel == LogLevel.Warning)
+                Warnings.Add(formatter(state, exception));
+        }
     }
 }

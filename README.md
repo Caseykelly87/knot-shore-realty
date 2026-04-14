@@ -121,15 +121,15 @@ Six entities, modeled in `KnotShoreRealty.Core/Models/`. Relationships and valid
 
 **Listing** — the core entity. Has an address, price, bedrooms, bathrooms, square footage, description, listing type (enum: `Residential` or `Commercial`), status (enum: `Draft`, `Active`, `Pending`, `Sold`, `Withdrawn`), listing date, and foreign keys to `Agent` and `Neighborhood`. Has a collection of `ListingImage` records. Only `Active` and `Pending` listings appear on public pages by default.
 
-**Agent** — a real estate agent. Has first name, last name, title, bio, email, phone, photo URL, and a collection of assigned listings.
+**Agent** — a real estate agent. Has name, title, bio, email, phone, photo URL, and a collection of assigned listings.
 
-**Neighborhood** — part of a self-referential hierarchical taxonomy. Has a name, slug, description, hero image URL, and a nullable `ParentId` that points to another neighborhood. This allows a three-level hierarchy: region ("St. Louis Metro") -> city ("Clayton") -> neighborhood ("Central Clayton"). Listing detail pages render a breadcrumb from this hierarchy.
+**Neighborhood** — part of a self-referential hierarchical taxonomy. Has a name, slug, description, hero image URL, and a nullable `ParentId` that points to another neighborhood. The hierarchy supports up to four levels with variable depth: metro region -> county or independent city -> city or town -> named neighborhood. Some branches go four levels deep, others stop earlier when the geography does not support deeper nesting. Listing detail pages render a breadcrumb from this hierarchy.
 
 **ListingImage** — an image associated with a listing. Has a URL, alt text, and a sort order. One image per listing is marked as primary and used as the thumbnail.
 
 **Inquiry** — a submission from the public inquiry form. Has a foreign key to the listing being inquired about, plus name, email, phone, message, and submitted-at timestamp. Has data annotation validation for email format, required fields, and message length.
 
-**PropertyType** — a C# enum (`SingleFamily`, `Condo`, `Townhouse`, `MultiFamily`, `Office`, `Retail`, `Industrial`, `Land`) used as a property on `Listing`. Modeled as an enum rather than a lookup table because the values are stable and finite. This decision is documented in `docs/decisions/0004-enums-vs-lookups.md`.
+**PropertyType** — a C# enum (`SingleFamily`, `Condo`, `Townhouse`, `MultiFamily`, `Office`, `Retail`, `Industrial`, `Land`) used as a property on `Listing`. Modeled as an enum rather than a lookup table because the values are stable and finite. This decision is documented in `docs/decisions/0004-enums-not-lookup-tables.md`.
 
 ### Listing status workflow
 
