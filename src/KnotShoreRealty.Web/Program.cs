@@ -1,5 +1,8 @@
 using System.Text.Json;
+using KnotShoreRealty.Core.Interfaces;
 using KnotShoreRealty.Data;
+using KnotShoreRealty.Data.Repositories;
+using KnotShoreRealty.Data.Seed;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
@@ -23,9 +26,28 @@ try
     builder.Services.AddHealthChecks()
         .AddDbContextCheck<KnotShoreRealtyDbContext>();
 
+    builder.Services.AddScoped<IListingRepository, ListingRepository>();
+    builder.Services.AddScoped<IAgentRepository, AgentRepository>();
+    builder.Services.AddScoped<INeighborhoodRepository, NeighborhoodRepository>();
+    builder.Services.AddScoped<IInquiryRepository, InquiryRepository>();
+
+    builder.Services.AddScoped<SeedDataLoader>(sp =>
+    {
+        var path = builder.Configuration["SeedData:Path"] ?? "seed-data";
+        var logger = sp.GetRequiredService<ILogger<SeedDataLoader>>();
+        return new SeedDataLoader(path, logger);
+    });
+    builder.Services.AddScoped<DbInitializer>();
+
     builder.Services.AddControllersWithViews();
 
     var app = builder.Build();
+
+    using (var scope = app.Services.CreateScope())
+    {
+        var initializer = scope.ServiceProvider.GetRequiredService<DbInitializer>();
+        await initializer.InitializeAsync();
+    }
 
     if (!app.Environment.IsDevelopment())
     {

@@ -1,0 +1,236 @@
+[
+  {
+    "slug": "st-louis-metro",
+    "name": "St. Louis Metro",
+    "description": "A bi-state metropolitan area anchored by the Mississippi River, defined by a distinct divide between the independent city core and the sprawling suburban counties of Missouri and Illinois.",
+    "parentSlug": null
+  },
+  {
+    "slug": "city-of-st-louis",
+    "name": "City of St. Louis",
+    "description": "An independent city geographically separate from St. Louis County, known for its dense brick architecture, 79 distinct neighborhoods, and the massive Forest Park.",
+    "parentSlug": "st-louis-metro"
+  },
+  {
+    "slug": "st-louis-county",
+    "name": "St. Louis County",
+    "description": "The most populous county in Missouri, consisting of nearly 90 individual municipalities ranging from inner-ring historic suburbs to high-acreage western estates.",
+    "parentSlug": "st-louis-metro"
+  },
+  {
+    "slug": "st-charles-county",
+    "name": "St. Charles County",
+    "description": "Located across the Missouri River, this area is characterized by rapid new construction, high-performing school districts, and the historic riverfront of its namesake city.",
+    "parentSlug": "st-louis-metro"
+  },
+  {
+    "slug": "central-west-end",
+    "name": "Central West End",
+    "description": "A dense urban district bordering Forest Park, home to the Cathedral Basilica and a mix of turn-of-the-century mansions and high-rise medical professionals.",
+    "parentSlug": "city-of-st-louis"
+  },
+  {
+    "slug": "soulard",
+    "name": "Soulard",
+    "description": "The city's oldest neighborhood, dominated by red-brick French Second Empire architecture and the historic Soulard Farmers Market that has operated since 1779.",
+    "parentSlug": "city-of-st-louis"
+  },
+  {
+    "slug": "lafayette-square",
+    "name": "Lafayette Square",
+    "description": "A historic district centered around the city's oldest public park, famous for its 'Painted Lady' Victorian mansions and strictly enforced historic preservation codes.",
+    "parentSlug": "city-of-st-louis"
+  },
+  {
+    "slug": "the-hill",
+    "name": "The Hill",
+    "description": "A world-renowned Italian-American enclave known for its shotgun-style brick houses, neighborhood delis, and a high concentration of multi-generational families.",
+    "parentSlug": "city-of-st-louis"
+  },
+  {
+    "slug": "tower-grove-south",
+    "name": "Tower Grove South",
+    "description": "A diverse area bordering the Victorian-era Tower Grove Park, featuring a high density of two-family flats and the international dining corridor of South Grand Boulevard.",
+    "parentSlug": "city-of-st-louis"
+  },
+  {
+    "slug": "benton-park",
+    "name": "Benton Park",
+    "description": "Historically tied to the city's brewing industry, this neighborhood features 19th-century brick rowhouses and a high concentration of independent restaurants.",
+    "parentSlug": "city-of-st-louis"
+  },
+  {
+    "slug": "st-louis-hills",
+    "name": "St. Louis Hills",
+    "description": "A South City neighborhood primarily developed in the 1930s and 40s, known for art deco influences, gingerbread-style brick bungalows, and proximity to Francis Park.",
+    "parentSlug": "city-of-st-louis"
+  },
+  {
+    "slug": "dogtown",
+    "name": "Dogtown",
+    "description": "A cluster of neighborhoods including Clayton-Tamm and Franz Park, known for its Irish heritage, worker cottages, and direct access to the zoo and Forest Park.",
+    "parentSlug": "city-of-st-louis"
+  },
+  {
+    "slug": "old-north-st-louis",
+    "name": "Old North St. Louis",
+    "description": "A historic area featuring significant 19th-century restoration projects, a pedestrian mall, and the famous Crown Candy Kitchen.",
+    "parentSlug": "city-of-st-louis"
+  },
+  {
+    "slug": "clayton",
+    "name": "Clayton",
+    "description": "The county seat and a major business hub, defined by high-end high-rise condos, a walkable downtown, and some of the highest property values in the state.",
+    "parentSlug": "st-louis-county"
+  },
+  {
+    "slug": "de-mun",
+    "name": "DeMun",
+    "description": "A walkable, leafy pocket on the eastern edge of Clayton near Concordia Seminary, featuring pre-war apartment buildings and small-scale commercial corners.",
+    "parentSlug": "clayton"
+  },
+  {
+    "slug": "the-moorlands",
+    "name": "The Moorlands",
+    "description": "A residential area in Clayton known for its high concentration of historic 1920s-era luxury apartments and stately single-family brick homes.",
+    "parentSlug": "clayton"
+  },
+  {
+    "slug": "clayton-gardens",
+    "name": "Clayton Gardens",
+    "description": "A prestigious mid-city neighborhood where original mid-century homes are frequently replaced by massive, custom-built luxury modern estates.",
+    "parentSlug": "clayton"
+  },
+  {
+    "slug": "kirkwood",
+    "name": "Kirkwood",
+    "description": "Established as the first planned suburb west of the Mississippi, it is centered around an active Amtrak station and a historic downtown shopping district.",
+    "parentSlug": "st-louis-county"
+  },
+  {
+    "slug": "downtown-kirkwood",
+    "name": "Downtown Kirkwood",
+    "description": "A pedestrian-friendly district with a mix of historic storefronts, new luxury apartments, and the long-standing Kirkwood Farmers Market.",
+    "parentSlug": "kirkwood"
+  },
+  {
+    "slug": "webster-groves",
+    "name": "Webster Groves",
+    "description": "Known as the 'City of Homes,' this area features a massive variety of architectural styles, a private university, and a small-town aesthetic with no through-traffic.",
+    "parentSlug": "st-louis-county"
+  },
+  {
+    "slug": "university-city",
+    "name": "University City",
+    "description": "A diverse municipality bordering Washington University, featuring a mix of grand historic mansions and smaller post-war residential blocks.",
+    "parentSlug": "st-louis-county"
+  },
+  {
+    "slug": "the-loop",
+    "name": "The Loop",
+    "description": "An entertainment and residential corridor along Delmar Boulevard, filled with concert venues, ethnic restaurants, and eclectic retail.",
+    "parentSlug": "university-city"
+  },
+  {
+    "slug": "chesterfield",
+    "name": "Chesterfield",
+    "description": "A massive western suburb spanning the Missouri River valley, characterized by large-scale shopping developments and hilly residential subdivisions.",
+    "parentSlug": "st-louis-county"
+  },
+  {
+    "slug": "green-trails",
+    "name": "Green Trails",
+    "description": "An established Chesterfield neighborhood prized for its extensive network of walking paths and 1970s-era traditional family homes.",
+    "parentSlug": "chesterfield"
+  },
+  {
+    "slug": "wildhorse",
+    "name": "Wildhorse",
+    "description": "A luxury subdivision in Chesterfield featuring large custom estates, private community pools, and proximity to the Spirit of St. Louis Airport.",
+    "parentSlug": "chesterfield"
+  },
+  {
+    "slug": "wildwood",
+    "name": "Wildwood",
+    "description": "The westernmost city in the county, emphasizing land conservation with strict limits on commercial density and a focus on equestrian and hiking trails.",
+    "parentSlug": "st-louis-county"
+  },
+  {
+    "slug": "babler-meadows",
+    "name": "Babler Meadows",
+    "description": "A secluded neighborhood bordering Babler State Park, offering larger-than-average lots and a heavy presence of mature timber.",
+    "parentSlug": "wildwood"
+  },
+  {
+    "slug": "old-state-farms",
+    "name": "Old State Farms",
+    "description": "A rural-style residential area in Wildwood known for scenic ridge views and varied topography that prevents standard grid development.",
+    "parentSlug": "wildwood"
+  },
+  {
+    "slug": "ladue",
+    "name": "Ladue",
+    "description": "One of the state's wealthiest enclaves, characterized by multi-acre estates, private schools, and a small, high-end commercial core along Clayton Road.",
+    "parentSlug": "st-louis-county"
+  },
+  {
+    "slug": "creve-coeur",
+    "name": "Creve Coeur",
+    "description": "A central county city known for its medical and tech corridors, mid-century modern architecture, and the massive Creve Coeur Lake Memorial Park.",
+    "parentSlug": "st-louis-county"
+  },
+  {
+    "slug": "bellerive-corridor",
+    "name": "Bellerive Corridor",
+    "description": "The residential stretch surrounding the Bellerive Country Club, featuring large ranch-style homes and expansive wooded lots.",
+    "parentSlug": "creve-coeur"
+  },
+  {
+    "slug": "town-and-country",
+    "name": "Town and Country",
+    "description": "An affluent residential-only community with no industrial zoning, known for its one-acre minimum lot sizes and massive custom-built mansions.",
+    "parentSlug": "st-louis-county"
+  },
+  {
+    "slug": "maplewood",
+    "name": "Maplewood",
+    "description": "A compact, inner-ring suburb with a revitalized downtown core focused on artisan makers, breweries, and early 20th-century frame houses.",
+    "parentSlug": "st-louis-county"
+  },
+  {
+    "slug": "st-charles",
+    "name": "St. Charles",
+    "description": "A historic river city featuring cobblestone streets on Main Street and a wide range of housing from 1800s cottages to new master-planned communities.",
+    "parentSlug": "st-charles-county"
+  },
+  {
+    "slug": "new-town",
+    "name": "New Town",
+    "description": "A New Urbanist development featuring high-density housing, man-made canals, and a walkable village center designed to foster high social interaction.",
+    "parentSlug": "st-charles"
+  },
+  {
+    "slug": "ofallon",
+    "name": "O'Fallon",
+    "description": "A major growth hub in St. Charles County, dominated by large corporate campuses, new-build subdivisions, and extensive youth sports complexes.",
+    "parentSlug": "st-charles-county"
+  },
+  {
+    "slug": "winghaven",
+    "name": "WingHaven",
+    "description": "A master-planned community in O'Fallon that integrates residential neighborhoods with a golf club and a high-tech business park.",
+    "parentSlug": "ofallon"
+  },
+  {
+    "slug": "streets-of-caledonia",
+    "name": "Streets of Caledonia",
+    "description": "A modern, high-demand residential development in O'Fallon featuring resort-style amenities including a clubhouse, pool, and pickleball courts.",
+    "parentSlug": "ofallon"
+  },
+  {
+    "slug": "st-peters",
+    "name": "St. Peters",
+    "description": "A central St. Charles County suburb known for the Rec-Plex athletic facility and a vast array of mid-range suburban housing options.",
+    "parentSlug": "st-charles-county"
+  }
+]
