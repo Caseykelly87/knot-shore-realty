@@ -33,9 +33,15 @@ try
 
     builder.Services.AddScoped<SeedDataLoader>(sp =>
     {
-        var path = builder.Configuration["SeedData:Path"] ?? "seed-data";
+        var configured = builder.Configuration["SeedData:Path"] ?? "seed-data";
+        // When the configured path is relative, walk up from the content root until a
+        // matching folder is found. This lets seed data live at the repo root rather than
+        // inside the web project directory without requiring an absolute path in config.
+        var resolved = Path.IsPathRooted(configured)
+            ? configured
+            : FindSeedDataFolder(builder.Environment.ContentRootPath, configured);
         var logger = sp.GetRequiredService<ILogger<SeedDataLoader>>();
-        return new SeedDataLoader(path, logger);
+        return new SeedDataLoader(resolved, logger);
     });
     builder.Services.AddScoped<DbInitializer>();
 
@@ -96,4 +102,20 @@ catch (Exception ex)
 finally
 {
     Log.CloseAndFlush();
+}
+
+// Walks up from startDir looking for a subdirectory named folderName.
+// Returns the first match found, or startDir/folderName if nothing is found
+// (letting SeedDataLoader log a clear "file not found" warning).
+static string FindSeedDataFolder(string startDir, string folderName)
+{
+    var dir = new DirectoryInfo(startDir);
+    while (dir != null)
+    {
+        var candidate = Path.Combine(dir.FullName, folderName);
+        if (Directory.Exists(candidate))
+            return candidate;
+        dir = dir.Parent;
+    }
+    return Path.Combine(startDir, folderName);
 }
