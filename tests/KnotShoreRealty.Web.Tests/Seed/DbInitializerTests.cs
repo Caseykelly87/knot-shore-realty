@@ -27,7 +27,6 @@ public class DbInitializerTests : IDisposable
             .Options;
 
         _context = new KnotShoreRealtyDbContext(options);
-        _context.Database.EnsureCreated();
     }
 
     private DbInitializer CreateInitializer() =>
